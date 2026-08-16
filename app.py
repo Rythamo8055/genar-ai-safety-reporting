@@ -154,22 +154,28 @@ else:
     st.sidebar.info(f"📁 Active Dataset: `{os.path.basename(default_dataset)}`")
 
 report_spec = st.sidebar.selectbox("Report Specification Schema", ["specs/pader_spec.json", "specs/psur_spec.json"])
-default_key = os.environ.get("GEMINI_API_KEY", "")
-if not default_key:
+env_key = os.environ.get("GEMINI_API_KEY", "")
+if not env_key:
     try:
-        default_key = st.secrets.get("GEMINI_API_KEY", "")
+        env_key = st.secrets.get("GEMINI_API_KEY", "")
     except Exception:
-        default_key = ""
+        env_key = ""
 
-api_key_input = st.sidebar.text_input("Google Gemini API Key", type="password", value=default_key)
+if env_key:
+    st.sidebar.success("🔒 API Key Loaded from Secrets")
+    custom_key = st.sidebar.text_input("Google Gemini API Key (Optional Override)", type="password", value="", help="Leave blank to use the secure server environment secret.")
+    active_api_key = custom_key if custom_key else env_key
+else:
+    custom_key = st.sidebar.text_input("Google Gemini API Key", type="password", value="", help="Enter your Google Gemini API key.")
+    active_api_key = custom_key
 
 run_btn = st.sidebar.button("🚀 Execute Report Pipeline", use_container_width=True, type="primary")
 
 
 # Step 1: Initial Evidence Loading & Pipeline Runner
 if run_btn:
-    if not api_key_input:
-        st.error("⚠️ Please provide a valid GEMINI_API_KEY in the sidebar or environment.")
+    if not active_api_key:
+        st.error("⚠️ Please provide a valid GEMINI_API_KEY in the sidebar or environment secrets.")
     else:
         with st.spinner("Executing Deterministic Analytics Engine..."):
             analyzer = ICSRAnalyzer(dataset_path)
@@ -177,9 +183,9 @@ if run_btn:
 
         with st.spinner("Authoring Scoped Narratives & Running Grounding Verifiers..."):
             context_builder = ContextBuilder(st.session_state.evidence)
-            generator = LLMGenerator(api_key=api_key_input, model="gemma-4-31b-it")
+            generator = LLMGenerator(api_key=active_api_key, model="gemma-4-31b-it")
             verifier = GroundingVerifier(st.session_state.evidence)
-            evaluator = RegulatoryEvaluatorAgent(api_key=api_key_input)
+            evaluator = RegulatoryEvaluatorAgent(api_key=active_api_key)
 
             sections = [
                 ("reporting_period", "1. Reporting Period & Product Profile"),
