@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches & Virtual Envs
+.venv
+venv/
+ENV/
+.pytest_cache/
+
+# Datasets (Excluded per Submission_Guide.pdf to keep zip / repo under size limit)
+*.xlsx
+*.csv
+!Bisoprolol_icsr_sample_1068rows.xlsx
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,42 @@
+{
+  "report_type": "PSUR",
+  "report_title": "Periodic Safety Update Report (PSUR / PBRER)",
+  "regulatory_framework": "EMA GVP Module VII / ICH E2C(R2)",
+  "sections": [
+    {
+      "section_id": "reporting_period",
+      "title": "1. Executive Summary & Worldwide Market Exposure",
+      "required_metrics": ["total_cases", "reporting_period_start", "reporting_period_end"],
+      "prompt_key": "reporting_period",
+      "description": "Executive summary of cumulative worldwide marketing experience and reporting window."
+    },
+    {
+      "section_id": "narrative_summary",
+      "title": "2. Summary of Safety Signals & Cumulative Experience",
+      "required_metrics": ["total_cases", "serious_cases", "top_reactions"],
+      "prompt_key": "narrative_summary",
+      "description": "Overview of cumulative ICSR experience and safety signal identification."
+    },
+    {
+      "section_id": "summary_cases",
+      "title": "3. Demographics and Subpopulation Analysis",
+      "required_metrics": ["age_breakdown", "sex_breakdown", "country_breakdown"],
+      "prompt_key": "summary_cases",
+      "description": "Subpopulation safety evaluation across pediatric, adult, and geriatric cohorts."
+    },
+    {
+      "section_id": "serious_cases",
+      "title": "4. Expedited & Serious Adverse Event Evaluation",
+      "required_metrics": ["expedited_cases", "seriousness_criteria_counts"],
+      "prompt_key": "serious_cases",
+      "description": "Detailed evaluation of expedited serious cases and mortality/hospitalization criteria."
+    },
+    {
+      "section_id": "trends_observations",
+      "title": "5. Benefit-Risk Balance & Trend Evaluation",
+      "required_metrics": ["monthly_trends"],
+      "prompt_key": "trends_observations",
+      "description": "Integrated benefit-risk assessment based on time-series safety trends."
+    }
+  ]
+}

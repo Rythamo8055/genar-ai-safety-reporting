@@ -1,0 +1,56 @@
+{
+  "report_type": "PADER",
+  "report_title": "Postmarketing Adverse Drug Experience Report (PADER)",
+  "regulatory_framework": "21 CFR 314.80 (U.S. FDA Postmarketing Reporting)",
+  "sections": [
+    {
+      "section_id": "reporting_period",
+      "title": "1. Reporting Period & Product Profile",
+      "required_metrics": ["total_cases", "total_rows", "reporting_period_start", "reporting_period_end"],
+      "prompt_key": "reporting_period",
+      "description": "Introductory section identifying product, class, and exact reporting dates."
+    },
+    {
+      "section_id": "narrative_summary",
+      "title": "2. Executive Narrative Summary & Analysis",
+      "required_metrics": ["total_cases", "serious_cases", "non_serious_cases", "top_reactions"],
+      "prompt_key": "narrative_summary",
+      "description": "Executive summary of case volume, seriousness, primary age group, and top adverse event."
+    },
+    {
+      "section_id": "summary_cases",
+      "title": "3. Summary Analysis of Cases (Demographics & Geography)",
+      "required_metrics": ["age_breakdown", "sex_breakdown", "country_breakdown"],
+      "prompt_key": "summary_cases",
+      "description": "Analytical breakdown across patient age cohorts, gender distribution, and reporting countries."
+    },
+    {
+      "section_id": "reaction_analysis",
+      "title": "4. Reaction / Adverse Event Analysis",
+      "required_metrics": ["top_reactions", "outcome_breakdown"],
+      "prompt_key": "reaction_analysis",
+      "description": "Detailed narrative analyzing top MedDRA Preferred Terms and event outcomes."
+    },
+    {
+      "section_id": "serious_cases",
+      "title": "5. Serious Cases and 15-Day Expedited Alerts",
+      "required_metrics": ["expedited_cases", "seriousness_criteria_counts"],
+      "prompt_key": "serious_cases",
+      "description": "Evaluation of expedited 15-day alert criteria and non-mutually exclusive seriousness flags."
+    },
+    {
+      "section_id": "trends_observations",
+      "title": "6. Trends and Important Observations",
+      "required_metrics": ["monthly_trends", "age_breakdown"],
+      "prompt_key": "trends_observations",
+      "description": "Time-series trend analysis over 12-month window and clinical demographic signals."
+    },
+    {
+      "section_id": "history_of_actions",
+      "title": "7. History of Safety-Related Actions",
+      "required_metrics": [],
+      "prompt_key": "history_of_actions",
+      "description": "Explicit statement regarding availability of safety-related regulatory actions."
+    }
+  ]
+}
