@@ -154,7 +154,14 @@ else:
     st.sidebar.info(f"📁 Active Dataset: `{os.path.basename(default_dataset)}`")
 
 report_spec = st.sidebar.selectbox("Report Specification Schema", ["specs/pader_spec.json", "specs/psur_spec.json"])
-api_key_input = st.sidebar.text_input("Google Gemini API Key", type="password", value=os.environ.get("GEMINI_API_KEY", ""))
+default_key = os.environ.get("GEMINI_API_KEY", "")
+if not default_key:
+    try:
+        default_key = st.secrets.get("GEMINI_API_KEY", "")
+    except Exception:
+        default_key = ""
+
+api_key_input = st.sidebar.text_input("Google Gemini API Key", type="password", value=default_key)
 
 run_btn = st.sidebar.button("🚀 Execute Report Pipeline", use_container_width=True, type="primary")
 

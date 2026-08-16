@@ -25,6 +25,12 @@ class LLMGenerator:
 
     def __init__(self, api_key: str = None, model: str = "gemma-4-31b-it"):
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY", "")
+        if not self.api_key:
+            try:
+                import streamlit as st
+                self.api_key = st.secrets.get("GEMINI_API_KEY", "")
+            except Exception:
+                pass
         self.model = model
         self.base_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent"
 
