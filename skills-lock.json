@@ -1,11 +1,23 @@
 {
   "version": 1,
   "skills": {
+    "changelog-video": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/changelog-video/SKILL.md",
+      "computedHash": "313e00f2b5cc24610bad6ce2fd0491ef32559a0f04efdac88c784f07a075f6de"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "skillPath": "skills/find-skills/SKILL.md",
       "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "product-launch-video": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/product-launch-video/SKILL.md",
+      "computedHash": "31fa403c96ea94bf0d6091a08922265398bfd0815eb38b90e218e52b224028f3"
     }
   }
 }
