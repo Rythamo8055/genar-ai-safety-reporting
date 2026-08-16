@@ -117,8 +117,18 @@ def run_pipeline(dataset_path: str, output_dir: str, parallel: bool = False):
 
 
 if __name__ == "__main__":
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset = os.path.join(base_dir, "Bisoprolol_icsr_sample_1068rows.xlsx")
-    out_dir = base_dir
-
-    run_pipeline(dataset, out_dir, parallel=False)
+    try:
+        import streamlit as st
+        if st.runtime.exists():
+            # Delegate to Interactive Web Dashboard if executed under Streamlit context
+            import app
+        else:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            dataset = os.path.join(base_dir, "Bisoprolol_icsr_sample_1068rows.xlsx")
+            out_dir = base_dir
+            run_pipeline(dataset, out_dir, parallel=False)
+    except Exception:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        dataset = os.path.join(base_dir, "Bisoprolol_icsr_sample_1068rows.xlsx")
+        out_dir = base_dir
+        run_pipeline(dataset, out_dir, parallel=False)
