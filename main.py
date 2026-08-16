@@ -120,8 +120,10 @@ if __name__ == "__main__":
     try:
         import streamlit as st
         if st.runtime.exists():
-            # Delegate to Interactive Web Dashboard if executed under Streamlit context
-            import app
+            app_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app.py")
+            with open(app_path, "r") as f:
+                code = f.read()
+            exec(code, globals())
         else:
             base_dir = os.path.dirname(os.path.abspath(__file__))
             dataset = os.path.join(base_dir, "Bisoprolol_icsr_sample_1068rows.xlsx")
