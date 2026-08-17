@@ -6,6 +6,20 @@ This platform executes **100% deterministic analytics** for all calculations, ca
 
 ---
 
+## 🎬 Demo Video & AI Voiceover Walkthrough
+
+[![Watch Demo Video](https://img.shields.io/badge/🎥_Watch_Full_Video_Walkthrough-GitHub_HD_Video-blue?style=for-the-badge&logo=github)](https://github.com/Rythamo8055/genar-ai-safety-reporting/raw/main/walkthrough_with_ai_voiceover.mp4)
+[![Live App URL](https://img.shields.io/badge/🚀_Live_Streamlit_App-quickhyre.streamlit.app-red?style=for-the-badge&logo=streamlit)](https://quickhyre.streamlit.app/)
+
+> **📹 [Click here to watch the full 1-Minute Live Demo Video with AI Voiceover Narration (`walkthrough_with_ai_voiceover.mp4`)](https://github.com/Rythamo8055/genar-ai-safety-reporting/blob/main/walkthrough_with_ai_voiceover.mp4)**
+
+The demo video showcases the live Streamlit dashboard in action, scrolling through the ICSR datasets, deterministic Pandas calculations, Gemma 4 32b narrative generation, automated grounding verifier, and the interactive human-in-the-loop sign-off interface—all narrated with high-definition AI neural voiceover!
+
+* **Direct Video Link:** [https://github.com/Rythamo8055/genar-ai-safety-reporting/raw/main/walkthrough_with_ai_voiceover.mp4](https://github.com/Rythamo8055/genar-ai-safety-reporting/raw/main/walkthrough_with_ai_voiceover.mp4)
+* **Audio Track:** [https://github.com/Rythamo8055/genar-ai-safety-reporting/blob/main/narration.mp3](https://github.com/Rythamo8055/genar-ai-safety-reporting/blob/main/narration.mp3)
+
+---
+
 ## 1. How Do I Run It?
 
 ### Prerequisites
